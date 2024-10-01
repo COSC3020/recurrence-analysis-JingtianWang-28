@@ -30,3 +30,15 @@ function mystery(n) {
 Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
+
+///
+
+
+        for(var i = 0; i < n*n; i++) { //n^2
+            for(var j = 0; j < n; j++) { // n
+                for(var k = 0; k < n*n; k++) { // n^2
+                    count = count + 1; // 1
+        mystery(n / 3)mystery(n / 3)mystery(n / 3) // *3 and each time recursive the input size will be n to n/3
+total loop = n^5 = $O(n^5)$
+T(n) = $3 * T(n/3) + 1 * n^5 * log(n)$
+T(n) = $log(n^5)$
