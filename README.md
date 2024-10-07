@@ -49,3 +49,16 @@ by def of master theorem, $T(n) = aT(n/b) + f(n)$
 T(n) = $3 * T(n/3) + (n^5)$
 
 T(n) = $O(n^5)$
+
+///
+substitution method
+set $T(n) =< cn^5$
+$T(n) = cn^5 +3/9(cn^5) +((3/9)^2)cn^5 + ((3/9)^3)cn^5  ....$
+$T(n) = cn^5 (1+(3/9)+((3/9)^2)+((3/9)^3)...)$
+$T(n) = 1+n+n^2+n^3...$
+$T(n) = cn^5 (1/(1-3/9))$
+$T(n) = 3/2(cn^5)$
+3/2 is a constant may re write as $O(n^5)$
+
+https://www.youtube.com/watch?v=zeVYepdQ9lY&ab_channel=GateSmashers
+https://www.cs.cornell.edu/courses/cs3110/2008fa/lectures/lec19.html#:~:text=A%20shorter%20path%20to%20the%20goal%20is%20to,controlling%20performance.%20Derive%20a%20recurrence%20from%20the%20code.
