@@ -62,3 +62,7 @@ $T(n) = 3/2(cn^5)$
 
 https://www.youtube.com/watch?v=zeVYepdQ9lY&ab_channel=GateSmashers
 https://www.cs.cornell.edu/courses/cs3110/2008fa/lectures/lec19.html#:~:text=A%20shorter%20path%20to%20the%20goal%20is%20to,controlling%20performance.%20Derive%20a%20recurrence%20from%20the%20code.
+
+Sources: chatgept provide me with ideas for proof methods. And complete the assignment through the examples and theorems on the above website.
+
+Plagiarism Statement: “I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.”
