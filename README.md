@@ -39,6 +39,13 @@ might help with the notation for mathematical expressions.
                 for(var k = 0; k < n*n; k++) { // n^2
                     count = count + 1; // 1
         mystery(n / 3)mystery(n / 3)mystery(n / 3) // *3 and each time recursive the input size will be n to n/3
-total loop = n^5 = $O(n^5)$
-T(n) = $3 * T(n/3) + 1 * n^5 * log(n)$
-T(n) = $log(n^5)$
+
+$total loop = n^2*n*n^2 =n^5 $
+
+T(n) = runtime of function when input size n,there is three times recursive calls, each time is n/3
+
+by def of master theorem, $T(n) = aT(n/b) + f(n)$
+
+T(n) = $3 * T(n/3) + (n^5)$
+
+T(n) = $O(n^5)$
