@@ -48,7 +48,7 @@ by def of master theorem, $T(n) = aT(n/b) + f(n)$
 
 T(n) = $3 * T(n/3) + (n^5)$
 
-T(n) = $O(n^5)$
+T(n) =< $O(n^5)$
 
 ///
 Recursive call three times, each time for n/3
