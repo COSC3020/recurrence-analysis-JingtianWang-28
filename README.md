@@ -51,6 +51,12 @@ T(n) = $3 * T(n/3) + (n^5)$
 T(n) = $O(n^5)$
 
 ///
+Recursive call three times, each time for n/3
+In the three-layer loop, the function mystery() runs n^2 times, n times, and n^2 times respectively.
+so $total loop = n^2*n*n^2 =n^5 $
+So the recursive part is three times n/3, and the loop part total work is (n^5)
+
+recurrence relation might be: $T(n) = $3T(n/3) + (n^5)$
 substitution method
 set $T(n) =< cn^5$
 $T(n) = cn^5 +3/9(cn^5) +((3/9)^2)cn^5 + ((3/9)^3)cn^5  ....$
