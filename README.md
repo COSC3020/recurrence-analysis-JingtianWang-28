@@ -31,8 +31,7 @@ Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
 
-///
-
+When n <= 1, the function does not perform any operation and returns, and the time complexity is O(1)
 
         for(var i = 0; i < n*n; i++) { //n^2
             for(var j = 0; j < n; j++) { // n
@@ -40,31 +39,38 @@ might help with the notation for mathematical expressions.
                     count = count + 1; // 1
         mystery(n / 3)mystery(n / 3)mystery(n / 3) // *3 and each time recursive the input size will be n to n/3
 
-$total loop = n^2*n*n^2 =n^5 $
+$total loop = n^2*n*n^2 =n^5 operations $
 
-T(n) = runtime of function when input size n,there is three times recursive calls, each time is n/3
+T(n) represents the function running time when the input is n. T(n) = O(1)
 
-by def of master theorem, $T(n) = aT(n/b) + f(n)$
+When n>1, the recursive relation consists of three mystery(n/3) calls and nested loops of O(n^5)
 
-T(n) = $3 * T(n/3) + (n^5)$
+The recursive relation is $T(n) = $3T(n/3) + (n^5)$
 
-T(n) =< $O(n^5)$
+Expand $T(n/3) = 3T(n/9)+O((n/3)^5) = 3T(n/9)+O(n^5/3^5)$
+
+Substitute into the original formula $T(n) = 3(3T(n/9)+O(n^5/3^5)+O(n^5/3^5))$
+
+$T(n) = 9T(n/9)+O(n^5/3^4)+O(n^5)$
+
+Continue to expand $T(n/9) = 3T(n/27)+O((n/9)^5) = 3T(n/27)+O(n^5/9^5)$
+
+Substituting into the original formula, $T(n) = 9(3T(n/27)+O(n^5/9^5))+O(n^5/3^4)+O(n^5)$
+
+$T(n) = 27T(n/27)+O(n^5/9^4)+O(n^5/3^4)+O(n^5)$
+
+At each level of recursion, the workload of the non-recursive part is O(n^5) and the number of recursive calls increases by three times each time. The recursion continues until n becomes small enough to reach the baseline case T(1) = O(1)
+
+After k expansions, the recursive relation is $ T(n) = 3^k(T)*(n/3^k)+O(n^5(1+(1/3^5)+(1/9^5)+...))$
+
+When the recursion ends, $n/3^k <= 1$, which gives $k=log_3(n)$, so at the bottom layer T(1) = O(1)
+
+The time complexity of the non-recursive part is a geometric series $O(n^5(1+(1/3^5)+(1/9^5)+...))$ and eventually converges to a constant. The workload of each layer is dominated by O(n^5). There are O(log n) layers of recursion, so the total time complexity is $T(n) = O(n^5 log_n)$
+
+$T(n) ∈ O(n^5)$
+
 
 ///
-Recursive call three times, each time for n/3
-In the three-layer loop, the function mystery() runs n^2 times, n times, and n^2 times respectively.
-so $total loop = n^2*n*n^2 =n^5 $
-So the recursive part is three times n/3, and the loop part total work is (n^5)
-
-recurrence relation might be: $T(n) = $3T(n/3) + (n^5)$
-substitution method
-set $T(n) =< cn^5$
-$T(n) = cn^5 +3/9(cn^5) +((3/9)^2)cn^5 + ((3/9)^3)cn^5  ....$
-$T(n) = cn^5 (1+(3/9)+((3/9)^2)+((3/9)^3)...)$
-$T(n) = 1+n+n^2+n^3...$
-$T(n) = cn^5 (1/(1-3/9))$
-$T(n) = 3/2(cn^5)$
-3/2 is a constant may re write as $O(n^5)$
 
 https://www.youtube.com/watch?v=zeVYepdQ9lY&ab_channel=GateSmashers
 https://www.cs.cornell.edu/courses/cs3110/2008fa/lectures/lec19.html#:~:text=A%20shorter%20path%20to%20the%20goal%20is%20to,controlling%20performance.%20Derive%20a%20recurrence%20from%20the%20code.
