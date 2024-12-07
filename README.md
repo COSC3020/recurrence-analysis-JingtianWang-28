@@ -31,6 +31,8 @@ Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
 
+///
+
 When n <= 1, the function does not perform any operation and returns, and the time complexity is O(1)
 
         for(var i = 0; i < n*n; i++) { //n^2
@@ -59,6 +61,8 @@ Substituting into the original formula, $T(n) = 9(3T(n/27)+(n^5/9^5))+(n^5/3^4)+
 
 $T(n) = 27T(n/27)+(n^5/9^4)+(n^5/3^4)+(n^5)$
 
+...
+
 = $3^i T(n/3^i)+ n^5 sig(i,k=0) (1/3^(4(k-1)))$
 
 for i = $log_3 (n)$
@@ -69,16 +73,6 @@ for i = $log_3 (n)$
 
 $T(n) ∈ O(n^5)$
 
-#
-At each level of recursion, the workload of the non-recursive part is O(n^5) and the number of recursive calls increases by three times each time. The recursion continues until n becomes small enough to reach the baseline case T(1) ∈ O(1)
-
-After k expansions, the recursive relation is $ T(n) = 3^k(T)*(n/3^k)+(n^5(1+(1/3^5)+(1/9^5)+...))$
-
-When the recursion ends, $n/3^k <= 1$, which gives $k=log_3(n)$, so at the bottom layer T(1) ∈ O(1)
-
-The time complexity of the non-recursive part is a geometric series $O(n^5(1+(1/3^5)+(1/9^5)+...))$ and eventually converges to a constant. The workload of each layer is dominated by O(n^5). There are O(log n) layers of recursion, so the total time complexity is $T(n) ∈ O(n^5 log_n)$
-
-$T(n) ∈ O(n^5)$
 
 
 ///
