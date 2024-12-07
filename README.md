@@ -61,6 +61,11 @@ $T(n) = 27T(n/27)+(n^5/9^4)+(n^5/3^4)+(n^5)$
 
 = $3^i T(n/3^i)+ n^5 sig(i,k=0) (1/3^(4(k-1)))$
 
+for i = $log_3 (n)$
+
+= $n+n^5$
+
+$T(n) ∈ O(n^5)$
 
 #
 At each level of recursion, the workload of the non-recursive part is O(n^5) and the number of recursive calls increases by three times each time. The recursion continues until n becomes small enough to reach the baseline case T(1) ∈ O(1)
