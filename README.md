@@ -59,7 +59,7 @@ Substituting into the original formula, $T(n) = 9(3T(n/27)+(n^5/9^5))+(n^5/3^4)+
 
 $T(n) = 27T(n/27)+(n^5/9^4)+(n^5/3^4)+(n^5)$
 
-= $3^i T(n/3^i)+ n^5 sig(i,k=0) (1/3^4(k-1))$
+= $3^i T(n/3^i)+ n^5 sig(i,k=0) (1/3^4(k-1) )$
 
 
 #
