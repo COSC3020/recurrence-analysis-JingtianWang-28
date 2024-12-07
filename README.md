@@ -59,6 +59,10 @@ Substituting into the original formula, $T(n) = 9(3T(n/27)+(n^5/9^5))+(n^5/3^4)+
 
 $T(n) = 27T(n/27)+(n^5/9^4)+(n^5/3^4)+(n^5)$
 
+= 3^i T(n/3^i)+ n^5 sig(i,k=0) (1/3^4(k-1))
+
+
+#
 At each level of recursion, the workload of the non-recursive part is O(n^5) and the number of recursive calls increases by three times each time. The recursion continues until n becomes small enough to reach the baseline case T(1) ∈ O(1)
 
 After k expansions, the recursive relation is $ T(n) = 3^k(T)*(n/3^k)+(n^5(1+(1/3^5)+(1/9^5)+...))$
